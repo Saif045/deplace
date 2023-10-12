@@ -1,11 +1,7 @@
-import CricleArrow from "@/components/CricleArrow";
-import Header from "@/components/header/Header";
 import Hero from "@/components/Hero";
-import Logo from "@/components/Logo";
 import QuoteSection from "@/components/QuoteSection";
 import Review from "@/components/Review";
 import ScrollMarquee from "@/utils/ScrollMarquee";
-import SlideOnHover from "@/components/SlideOnHover";
 import DragCarousel from "@/components/DragCarousel";
 
 export default function Home() {
@@ -18,16 +14,4 @@ export default function Home() {
       <Review />
     </div>
   );
-}
-
-{
-  /** 
-      <div className="flex flex-col gap-4">
-        <SlideOnHover item="Terms" href="/fsaf" />
-        <SlideOnHover item="Privacy" href="/sag" />
-        <SlideOnHover item="Cookie" href="/sagsagasgsa" />
-      </div>
-      <div>
-        <CricleArrow item="Shop All" href="/" arrowImg="/arrow-right.svg" />
-      </div> */
 }
