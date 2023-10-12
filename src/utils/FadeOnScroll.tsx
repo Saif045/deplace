@@ -21,7 +21,7 @@ const FadeOnScroll = ({ children }: { children: React.ReactNode }) => {
   const springOpacity = useSpring(opacity, { stiffness: 100, damping: 20 });
   return (
     <motion.div
-      className=""
+      className="h-full "
       style={{
         opacity: springOpacity,
         translateY: springY,

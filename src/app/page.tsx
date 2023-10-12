@@ -1,10 +1,10 @@
 import CricleArrow from "@/components/CricleArrow";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import Hero from "@/components/Hero";
 import Logo from "@/components/Logo";
 import QuoteSection from "@/components/QuoteSection";
 import Review from "@/components/Review";
-import ScrollMarquee from "@/components/ScrollMarquee";
+import ScrollMarquee from "@/utils/ScrollMarquee";
 import SlideOnHover from "@/components/SlideOnHover";
 import DragCarousel from "@/components/DragCarousel";
 

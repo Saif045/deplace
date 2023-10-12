@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import CricleArrow from "./CricleArrow";
+import CricleArrow from "@/utils/CricleArrow";
 
 type Props = {};
 

@@ -1,5 +1,5 @@
 import React from "react";
-import SlideOnHover from "./SlideOnHover";
+import SlideOnHover from "@/utils/SlideOnHover";
 
 const Sidebar = () => {
   return (

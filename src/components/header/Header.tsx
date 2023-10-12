@@ -1,15 +1,17 @@
 "use client";
 import React from "react";
-import Logo from "./Logo";
-import SlideOnHover from "./SlideOnHover";
+import Logo from "../Logo";
+import SlideOnHover from "@/utils/SlideOnHover";
 import { useWindowSize } from "usehooks-ts";
-import FadeOnScroll from "./FadeOnScroll";
+import FadeOnScroll from "@/utils/FadeOnScroll";
 import { motion } from "framer-motion";
 import MobileMenu from "./MobileMenu";
+import useDarkSide from "@/utils/useDarkSide";
 
 const Header = () => {
   const { width } = useWindowSize();
-
+  const { isDarkTheme, toggleTheme } = useDarkSide();
+  console.log(isDarkTheme);
   return (
     <>
       <div className="h-[46px] w-full" />
@@ -19,7 +21,7 @@ const Header = () => {
             <Logo width={width} />
 
             <FadeOnScroll>
-              <div className="ink-label-wrap">
+              <div className="ink-label-wrap" onClick={toggleTheme}>
                 <div className="text-block-10">InK MoDe</div>
               </div>
             </FadeOnScroll>

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import CricleArrow from "./CricleArrow";
-import SlideOnHover from "./SlideOnHover";
+import CricleArrow from "@/utils/CricleArrow";
+import SlideOnHover from "@/utils/SlideOnHover";
 
 import { motion, scroll } from "framer-motion";
 type Props = {};

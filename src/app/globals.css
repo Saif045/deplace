@@ -4,12 +4,7 @@
 
 :root {
   --cursor-size: 28px;
-  --bg: #fcf9ee;
-  --pink: #e7d6c4;
-  --yellow: #ddc92a;
-  --dark: #141414;
 
-  color: #141414;
   font-size: 0.85vw;
   line-height: 0.85vw;
   font-weight: 400;
@@ -17,6 +12,23 @@
   text-transform: uppercase;
   font-family: var(--FavoritFont);
   width: 100%;
+}
+.light {
+  --bg: #fcf9ee;
+  --pink: #e7d6c4;
+  --yellow: #ddc92a;
+  --dark: #141414;
+
+  color: #141414;
+}
+.dark {
+  /*
+  --bg: #141414;
+  --pink: #e7d6c4;
+  --yellow: #e7d6c4;
+  --dark: #fcf9ee;
+
+  color: #fcf9ee;*/
 }
 
 #cursor {
@@ -241,14 +253,18 @@ h1 {
   display: block;
   margin-top: 1px;
   right: 0;
-  background: #141414; /* Replace $black with the actual color code (e.g., #000) */
+  background: var(
+    --bg
+  ); /* Replace $black with the actual color code (e.g., #000) */
   transition: 0.4s ease;
 }
 
 .hover-underline:hover::after {
   width: 100%;
   left: 0;
-  background: #141414; /* Replace $black with the actual color code (e.g., #000) */
+  background: var(
+    --bg
+  ); /* Replace $black with the actual color code (e.g., #000) */
 }
 
 /* header */
@@ -319,7 +335,7 @@ h1 {
 .menu-trigger {
   z-index: 98;
   width: 50px;
-
+  height: 100%;
   padding: 2vw 10px;
   cursor: pointer;
 }
@@ -331,7 +347,7 @@ h1 {
   width: 31px;
   height: 2px;
   margin-bottom: 4.5px;
-  background-color: #141414;
+  background-color: var(--bg);
 }
 .menu-line.right {
   width: 16px;
@@ -391,7 +407,7 @@ h1 {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  border: 3px solid #000;
+  border: 3px solid var(--bg);
 }
 
 .i-standard {
@@ -439,7 +455,7 @@ h1 {
   align-items: center;
   border-style: solid none;
   border-width: 0.2vw;
-  border-color: #000;
+  border-color: var(--bg);
   background-color: var(--yellow);
   padding: 2rem 0;
 }
@@ -537,7 +553,7 @@ h1 {
   align-items: flex-end;
   border-style: none none solid;
   border-width: 1px 1px 1px 2px;
-  border-color: #141414;
+  border-color: var(--bg);
   background-color: transparent;
   width: 29vw;
   height: 5vw;
@@ -550,7 +566,7 @@ h1 {
 }
 .form-field-2 {
   font-family: Favorit, sans-serif;
-  color: #141414;
+  color: var(--bg);
   font-weight: 400;
 }
 label {
@@ -562,7 +578,7 @@ label {
 }
 
 .form-input-2 {
-  color: #141414;
+  color: var(--bg);
   font-size: 1.5vw;
   line-height: 1.5vw;
   letter-spacing: -0.04em;
@@ -604,7 +620,7 @@ input {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  color: #141414;
+  color: var(--bg);
   text-transform: uppercase;
 }
 
@@ -755,8 +771,8 @@ input {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 2px solid #141414;
-  background-color: #e7d6c4;
+  border: 2px solid var(--bg);
+  background-color: var(--pink);
 }
 
 .item-link {
@@ -766,7 +782,7 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  background-color: #e7d6c4;
+  background-color: var(--pink);
 }
 
 .iw-up {

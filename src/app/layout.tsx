@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import GooeyCursor from "@/components/GooeyCursor";
+import GooeyCursor from "@/utils/GooeyCursor";
 import localFont from "next/font/local";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import Sidebar from "@/components/Sidebar";
 
 // const inter = Inter({ subsets: ["latin"] });

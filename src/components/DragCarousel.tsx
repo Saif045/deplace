@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import CricleArrow from "./CricleArrow";
+import CricleArrow from "@/utils/CricleArrow";
 
 const DragCarousel = () => {
   const constraintsRef = useRef<HTMLDivElement | null>(null);
