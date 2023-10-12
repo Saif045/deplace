@@ -22,6 +22,12 @@
   color: #141414;
 }
 .dark {
+  --bg: #fcf9ee;
+  --pink: #e7d6c4;
+  --yellow: #ddc92a;
+  --dark: #141414;
+
+  color: #141414;
   /*
   --bg: #141414;
   --pink: #e7d6c4;
