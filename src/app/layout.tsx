@@ -5,19 +5,20 @@ import GooeyCursor from "@/components/GooeyCursor";
 import localFont from "next/font/local";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
 
 // const inter = Inter({ subsets: ["latin"] });
 const favoritFont = localFont({
-  src: "./FavoritFont.otf",
+  src: "../../public/fonts/FavoritFont.otf",
   variable: "--FavoritFont",
 });
 const cyberthrone = localFont({
-  src: "./Cyberthrone.ttf",
+  src: "../../public/fonts/Cyberthrone.ttf",
   variable: "--Cyberthrone",
 });
 
 const trailers = localFont({
-  src: "./Trailers.ttf",
+  src: "../../public/fonts/Trailers.ttf",
   variable: "--Trailers",
 });
 
@@ -36,9 +37,12 @@ export default function RootLayout({
       <body
         className={`${favoritFont.variable} ${cyberthrone.variable}  ${trailers.variable} `}>
         <GooeyCursor />
-        <Header />
+        <main className="w-full h-full relative">
+          <Header />
 
-        {children}
+          {children}
+          <Sidebar />
+        </main>
         <Footer />
       </body>
     </html>

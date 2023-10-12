@@ -8,27 +8,26 @@ const DragCarousel = () => {
 
   return (
     <>
-      <div ref={constraintsRef} className="overflow-x-hidden">
+      <div ref={constraintsRef} className="overflow-hidden">
         <motion.div
           drag="x"
           dragConstraints={constraintsRef}
           dragElastic={0.5}
           dragTransition={{ bounceStiffness: 100, bounceDamping: 40 }}
-          className="slider-wrap pl-[23.5vw]">
+          className="slider-wrap px-[1.5vw] lg:pl-[23.5vw]">
           {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
             <ItemCard key={index} />
           ))}
         </motion.div>
-
-        <motion.div
-          className="mr-[3vw]"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 1 }}
-          transition={{ duration: 0.3 }}>
-          <CricleArrow item="SHOP ALL" href="/" arrowImg="/arrow-right.svg" />
-        </motion.div>
-      </div>{" "}
+      </div>
+      <motion.div
+        className="mr-[3vw] overflow-hidden"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 1 }}
+        transition={{ duration: 0.3 }}>
+        <CricleArrow item="SHOP ALL" href="/" arrowImg="/arrow-right.svg" />
+      </motion.div>
     </>
   );
 };
@@ -37,7 +36,7 @@ export default DragCarousel;
 
 const ItemCard = () => {
   return (
-    <div className="grid-item w-dyn-item is-selected">
+    <motion.div className="grid-item ">
       <div className="item-link item-white">
         <div className="item-wrap iw-up">
           <img
@@ -65,6 +64,6 @@ const ItemCard = () => {
           <div className="item-price">€&nbsp;180&nbsp;EUR</div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

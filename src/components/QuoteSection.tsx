@@ -5,31 +5,59 @@ import { motion } from "framer-motion";
 
 const QuoteSection = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true}}
-      transition={{ duration: 0.5 }}
-      className="e-section ">
+    <motion.div className="e-section ">
       <div className="e-outer flex">
-        <div className="e-aside">who we are</div>
-        <h2 className="e-heading eh-1 flex-1">
+        <motion.div
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: "0%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="e-aside">
+          who we are
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: "0%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="e-heading eh-1 flex-1">
           An independent
           <Link href="/" className="underline mx-2">
             brand
           </Link>
           of
-        </h2>
+        </motion.div>
       </div>
 
-      <div className="e-outer">
-        <h2 className="e-heading">urban trekking shoes and accessories</h2>
+      <div className="e-outer  ">
+        <motion.div
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: "0%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="e-heading">
+          urban trekking shoes and accessories
+        </motion.div>
       </div>
       <div className="e-outer">
-        <h2 className="e-heading">that comes from a convergence of </h2>
+        <motion.div
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: "0%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="e-heading">
+          that comes from a convergence of
+        </motion.div>
       </div>
       <div className="e-outer">
-        <h2 className="e-heading">arts and personalities.</h2>
+        <motion.div
+          initial={{ opacity: 0, y: "100%" }}
+          whileInView={{ opacity: 1, y: "0%" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="e-heading">
+          arts and personalities.
+        </motion.div>
       </div>
     </motion.div>
   );

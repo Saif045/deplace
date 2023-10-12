@@ -1,10 +1,18 @@
+"use client";
 import React from "react";
 import CricleArrow from "./CricleArrow";
 import SlideOnHover from "./SlideOnHover";
 
+import { motion, scroll } from "framer-motion";
 type Props = {};
 
 const Footer = (props: Props) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // This provides smooth scrolling
+    });
+  };
   return (
     <div className="footer h-full w-full flex gap-[2vw]">
       <section className="f-col1">
@@ -70,8 +78,10 @@ const Footer = (props: Props) => {
         <div>© 2020 déplacé maison.</div>
       </div>
       <div className="flex flex-col justify-between">
-        <div className="flex justify-start items-start -mt-[7vw]">
-          <CricleArrow href="/" arrowImg="/arrow-up.png" />
+        <div
+          className="flex justify-start items-start -mt-[7vw]"
+          onClick={scrollToTop}>
+          <CricleArrow href="" arrowImg="/arrow-up.png" />
         </div>
         <div className="flex">
           <div className="f-social-wrap">

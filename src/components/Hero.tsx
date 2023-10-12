@@ -14,7 +14,8 @@ const Hero = (props: Props) => {
         <div className="overflow-y-hidden w-full h-full">
           <motion.div
             initial={{ opacity: 0, y: "100%" }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: "0%" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.4 }}
             className="w-full h-full inline-flex gap-2 items-center  justify-end ">
             {spring.map((item, index) => (
@@ -28,7 +29,8 @@ const Hero = (props: Props) => {
         <div className="overflow-y-hidden w-full h-full">
           <motion.div
             initial={{ opacity: 0, y: "100%" }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: "0%" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.4 }}
             className="w-full h-full inline-flex gap-2 items-center justify-end ">
             {summer.map((item, index) => (
@@ -47,7 +49,7 @@ const Hero = (props: Props) => {
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.4 }}
             className="i-container">
             <div id="wrapper-1" className="standard-wrap">
@@ -74,8 +76,8 @@ const Hero = (props: Props) => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.4 }}
             className="scotch-tape">
             <img
               src="https://web.archive.org/web/20220122002134im_/https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5d09026ed5102a6910070111_scotch-tape.svg"
@@ -87,7 +89,7 @@ const Hero = (props: Props) => {
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.4 }}
             className="i-container ic-2">
             <div id="wrapper-2" className="standard-wrap">
