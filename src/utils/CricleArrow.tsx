@@ -1,23 +1,30 @@
+"use client";
+import ClientOnly from "@/components/ClientOnly";
+import Arrow from "@/svgs/Arrow";
+import Circle from "@/svgs/Circle";
 import Link from "next/link";
 import React from "react";
 
 const CricleArrow = ({
   item,
   href,
-  arrowImg,
+  arrowDir,
 }: {
   item?: string;
   href: string;
-  arrowImg: string;
+  arrowDir: string;
 }) => {
   return (
-    <div className="l-wrap">
-      {item && <div className="hover-underline">{item}</div>}
-      <Link href={href} className="lerp-wrap ">
-        <img src="/circle.svg" alt="circle" className="circle" />
-        <img src={arrowImg} alt="arrow-right" className="arrow" />
-      </Link>
-    </div>
+    <ClientOnly>
+      <div className="l-wrap ">
+        {item && <div className="hover-underline">{item}</div>}
+        <Link href={href} className="lerp-wrap">
+          <Circle />
+
+          <Arrow dir={arrowDir} />
+        </Link>
+      </div>
+    </ClientOnly>
   );
 };
 

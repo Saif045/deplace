@@ -1,13 +1,19 @@
 import React from "react";
+import ClientOnly from "./ClientOnly";
+import LogoSvg from "@/svgs/LogoSvg";
 
 const Logo = ({ width, bgIsBlack }: { width: number; bgIsBlack?: boolean }) => {
   return (
-    <>
+    <ClientOnly>
       {width > 1024 ? (
         <div className="logo-wrap">
           <div className="logo-inner">
-            <img src="/logo.svg" alt="logo" className="h-logo" />
-            <img src="/logo.svg" alt="logo" className="h-logo logo-side" />
+            <div className="h-logo ">
+              <LogoSvg />
+            </div>
+            <div className="h-logo logo-side">
+              <LogoSvg />
+            </div>
           </div>
         </div>
       ) : (
@@ -27,7 +33,7 @@ const Logo = ({ width, bgIsBlack }: { width: number; bgIsBlack?: boolean }) => {
           )}
         </>
       )}
-    </>
+    </ClientOnly>
   );
 };
 

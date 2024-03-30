@@ -2,15 +2,15 @@ import Hero from "@/components/Hero";
 import QuoteSection from "@/components/QuoteSection";
 import Review from "@/components/Review";
 import ScrollMarquee from "@/utils/ScrollMarquee";
-import DragCarousel from "@/components/DragCarousel";
+import HomeCarousel from "@/components/HomeCarousel";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="w-full h-full">
       <Hero />
       <ScrollMarquee />
       <QuoteSection />
-      <DragCarousel />
+      <HomeCarousel />
       <Review />
     </div>
   );

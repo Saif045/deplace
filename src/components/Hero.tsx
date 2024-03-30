@@ -17,7 +17,8 @@ const Hero = (props: Props) => {
             whileInView={{ opacity: 1, y: "0%" }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="w-full h-full inline-flex gap-2 items-center  justify-end ">
+            className="w-full h-full inline-flex gap-2 items-center  justify-end "
+          >
             {spring.map((item, index) => (
               <h1 className="h-letter last:mx-6" key={index}>
                 {item}
@@ -32,7 +33,8 @@ const Hero = (props: Props) => {
             whileInView={{ opacity: 1, y: "0%" }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="w-full h-full inline-flex gap-2 items-center justify-end ">
+            className="w-full h-full inline-flex gap-2 items-center justify-end "
+          >
             {summer.map((item, index) => (
               <h1 className="h-letter " key={index}>
                 {item}
@@ -51,7 +53,8 @@ const Hero = (props: Props) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="i-container">
+            className="i-container"
+          >
             <div id="wrapper-1" className="standard-wrap">
               <img
                 className="i-standard"
@@ -78,7 +81,8 @@ const Hero = (props: Props) => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.4 }}
-            className="scotch-tape">
+            className="scotch-tape"
+          >
             <img
               src="https://web.archive.org/web/20220122002134im_/https://global-uploads.webflow.com/5c9c9c646cf0969b319f264f/5d09026ed5102a6910070111_scotch-tape.svg"
               alt=""
@@ -91,7 +95,8 @@ const Hero = (props: Props) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="i-container ic-2">
+            className="i-container ic-2"
+          >
             <div id="wrapper-2" className="standard-wrap">
               <img
                 className="i-standard"
@@ -117,8 +122,9 @@ const Hero = (props: Props) => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 1 }}
-          transition={{ duration: 0.3 }}>
-          <CricleArrow item="Explore" href="/" arrowImg="/arrow-right.svg" />
+          transition={{ duration: 0.3 }}
+        >
+          <CricleArrow item="Explore" href="/" arrowDir="right" />
         </motion.div>
       </main>
     </div>

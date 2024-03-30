@@ -1,38 +1,46 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import CricleArrow from "@/utils/CricleArrow";
+import { EmblaOptionsType } from "embla-carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import ClientOnly from "./ClientOnly";
 
-const DragCarousel = () => {
-  const constraintsRef = useRef<HTMLDivElement | null>(null);
+const HomeCarousel = () => {
+  const OPTIONS: EmblaOptionsType = {
+    align: "end",
+    containScroll: "trimSnaps",
+    slidesToScroll: "auto",
+  };
+
+  const [emblaRef] = useEmblaCarousel(OPTIONS, []);
 
   return (
-    <>
-      <div ref={constraintsRef} className="overflow-hidden">
-        <motion.div
-          drag="x"
-          dragConstraints={constraintsRef}
-          dragElastic={0.5}
-          dragTransition={{ bounceStiffness: 100, bounceDamping: 40 }}
-          className="slider-wrap px-[1.5vw] lg:pl-[23.5vw]">
-          {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
-            <ItemCard key={index} />
-          ))}
-        </motion.div>
+    <ClientOnly>
+      {" "}
+      <div className="embla">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container px-[1.5vw] lg:pl-[23.5vw]">
+            {[1, 2, 3, 4, 5, 6, 7].map((index) => (
+              <ItemCard key={index} />
+            ))}
+          </div>
+        </div>
       </div>
       <motion.div
         className="mr-[3vw] overflow-hidden"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 1 }}
-        transition={{ duration: 0.3 }}>
-        <CricleArrow item="SHOP ALL" href="/" arrowImg="/arrow-right.svg" />
+        transition={{ duration: 0.3 }}
+      >
+        <CricleArrow item="SHOP ALL" href="/" arrowDir="right" />
       </motion.div>
-    </>
+    </ClientOnly>
   );
 };
 
-export default DragCarousel;
+export default HomeCarousel;
 
 const ItemCard = () => {
   return (

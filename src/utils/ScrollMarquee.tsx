@@ -12,15 +12,20 @@ const ScrollMarquee = (props: Props) => {
         initial={{ opacity: 0, x: "100%" }}
         whileInView={{ opacity: 1, x: "0%" }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}>
-        <Marquee autoFill speed={100} className="hide-scroll-bar c-marquee-item">
-        <div  className="c-marquee-content">
-              <h1 className="c-marquee-heading">
-                deplace shop&nbsp;&nbsp;
-                <span className="c-marquee-span">·</span>
-                &nbsp;&nbsp;do not scroll&nbsp;&nbsp;·{" "}
-              </h1>
-            </div>
+        transition={{ duration: 1 }}
+      >
+        <Marquee
+          autoFill
+          speed={100}
+          className="hide-scroll-bar c-marquee-item"
+        >
+          <div className="c-marquee-content">
+            <h1 className="c-marquee-heading">
+              &nbsp;&nbsp;deplace shop&nbsp;&nbsp;
+              <span className="c-marquee-span">·</span>
+              &nbsp;&nbsp;do not scroll&nbsp;&nbsp; ·{" "}
+            </h1>
+          </div>
         </Marquee>
       </motion.section>
     </section>

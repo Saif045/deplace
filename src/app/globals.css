@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+div,
+* {
+  box-sizing: border-box;
+}
+
+.embla {
+  /* --slide-spacing: 1rem; */
+  --slide-size: 100%;
+  --slide-height: 34vw;
+
+  /*  */
+}
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+}
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+
 :root {
   --cursor-size: 28px;
 
@@ -19,22 +44,19 @@
   --yellow: #ddc92a;
   --dark: #141414;
 
+  --text: #141414;
+
   color: #141414;
 }
 .dark {
-  --bg: #fcf9ee;
-  --pink: #e7d6c4;
-  --yellow: #ddc92a;
-  --dark: #141414;
-
-  color: #141414;
-  /*
   --bg: #141414;
   --pink: #e7d6c4;
   --yellow: #e7d6c4;
   --dark: #fcf9ee;
 
-  color: #fcf9ee;*/
+  --text: #e7d6c4;
+
+  color: #e7d6c4;
 }
 
 #cursor {
@@ -218,12 +240,19 @@ h1 {
   transition: transform 0.45s ease; /* Add transition property for animation */
 }
 
-.lerp-wrap:hover > .arrow {
+.lerp-wrap:hover > .arrow-right {
   transform-style: preserve-3d;
   transform: rotateZ(360deg);
   transition: transform 0.6s ease; /* Add transition property for animation */
 }
+.lerp-wrap:hover > .arrow-up {
+  transform-style: preserve-3d;
+  transform: rotateZ(270deg);
+  transition: transform 0.6s ease; /* Add transition property for animation */
+}
 .circle {
+  margin-right: 4rem;
+  margin-left: 0.5rem;
   position: absolute;
   width: 5vw;
   height: 5vw;
@@ -232,15 +261,26 @@ h1 {
   transform: scale3d(1, 1, 1);
   transition: transform 0.45s ease; /* Add transition property for animation */
 }
+
 .arrow {
+  margin-right: 4rem;
+  margin-left: 0.5rem;
   position: absolute;
   width: 2.5vw;
   height: 2.5vw;
-  transform-style: preserve-3d;
+}
+
+.arrow-right {
   transform: rotateZ(0deg);
+  transform-style: preserve-3d;
   transition: transform 0.6s ease; /* Add transition property for animation */
 }
 
+.arrow-up {
+  transform: rotateZ(-90deg);
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease; /* Add transition property for animation */
+}
 .hover-underline {
   position: relative;
 
@@ -467,8 +507,9 @@ h1 {
 }
 
 .c-marquee-content {
+  color: #141414;
   display: flex;
-  width: 36vw;
+  width: 100%;
   height: auto;
   margin-top: 0;
   margin-bottom: 0;
@@ -559,7 +600,7 @@ h1 {
   align-items: flex-end;
   border-style: none none solid;
   border-width: 1px 1px 1px 2px;
-  border-color: var(--bg);
+  border-color: var(--text);
   background-color: transparent;
   width: 29vw;
   height: 5vw;
@@ -572,7 +613,7 @@ h1 {
 }
 .form-field-2 {
   font-family: Favorit, sans-serif;
-  color: var(--bg);
+  color: var(--text);
   font-weight: 400;
 }
 label {
@@ -584,7 +625,7 @@ label {
 }
 
 .form-input-2 {
-  color: var(--bg);
+  color: var(--text);
   font-size: 1.5vw;
   line-height: 1.5vw;
   letter-spacing: -0.04em;
@@ -607,6 +648,9 @@ input {
   line-height: 1.5vw;
   letter-spacing: -0.04em;
 }
+.w-input:focus {
+  outline: none;
+}
 #newsletter {
   line-height: normal;
   background-color: transparent;
@@ -626,7 +670,7 @@ input {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  color: var(--bg);
+  color: var(--text);
   text-transform: uppercase;
 }
 
@@ -769,6 +813,8 @@ input {
 }
 
 .grid-item {
+  color: #141414;
+  flex: 0 0 27vw;
   display: flex;
   overflow: hidden;
   width: 27vw;

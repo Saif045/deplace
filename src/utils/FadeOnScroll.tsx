@@ -13,7 +13,9 @@ const FadeOnScroll = ({ children }: { children: React.ReactNode }) => {
   const showLogo = useMotionValue(1);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    showLogo.set(scrollYProgress.getPrevious() > scrollYProgress.get() ? 1 : 0);
+    showLogo.set(
+      (scrollYProgress?.getPrevious() as number) > scrollYProgress.get() ? 1 : 0
+    );
   });
   const scrollYY = useTransform(showLogo, [0, 1], [-50, 0]);
   const springY = useSpring(scrollYY, { stiffness: 100, damping: 20 });
@@ -25,7 +27,8 @@ const FadeOnScroll = ({ children }: { children: React.ReactNode }) => {
       style={{
         opacity: springOpacity,
         translateY: springY,
-      }}>
+      }}
+    >
       {children}
     </motion.div>
   );

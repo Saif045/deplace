@@ -4,6 +4,9 @@ import CricleArrow from "@/utils/CricleArrow";
 import SlideOnHover from "@/utils/SlideOnHover";
 
 import { motion, scroll } from "framer-motion";
+import NewsLetterIcon from "@/svgs/NewsLetterIcon";
+import FbIcon from "@/svgs/FbIcon";
+import IgIcon from "@/svgs/IgIcon";
 type Props = {};
 
 const Footer = (props: Props) => {
@@ -14,17 +17,12 @@ const Footer = (props: Props) => {
     });
   };
   return (
-    <div className="footer h-full w-full flex gap-[2vw]">
+    <div className="footer  w-full flex gap-[2vw]">
       <section className="f-col1">
         <div className="f-news">
           <h5 className="mb-[1vw]">SUBSCRIBE&nbsp;TO&nbsp;NEWSLETTER</h5>
           <div className="f-icon">
-            <img
-              src="/newsLetter-icon.svg"
-              alt="f-newsltetter"
-              draggable="false"
-              className="newsletter"
-            />
+            <NewsLetterIcon />
           </div>
         </div>
 
@@ -50,7 +48,8 @@ const Footer = (props: Props) => {
               <button
                 type="submit"
                 data-wait="Please wait..."
-                className="f-button-2 w-button">
+                className="f-button-2 w-button"
+              >
                 Submit
               </button>
             </form>
@@ -80,25 +79,16 @@ const Footer = (props: Props) => {
       <div className="flex flex-col justify-between">
         <div
           className="flex justify-start items-start -mt-[7vw]"
-          onClick={scrollToTop}>
-          <CricleArrow href="" arrowImg="/arrow-up.png" />
+          onClick={scrollToTop}
+        >
+          <CricleArrow href="" arrowDir="up" />
         </div>
         <div className="flex">
           <div className="f-social-wrap">
-            <img
-              src="/fb-icon.svg"
-              width="16"
-              alt="fb-icon"
-              className="f-social-icon"
-            />
+            <FbIcon />
           </div>
           <div className="f-social-wrap">
-            <img
-              src="/ig-icon.svg"
-              width="16"
-              alt="ig-icon"
-              className="f-social-icon"
-            />
+            <IgIcon />
           </div>
         </div>
       </div>
